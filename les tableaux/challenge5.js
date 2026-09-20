@@ -1,10 +1,17 @@
-const n = [15,4,6,24,1];
-let min = n[0];
-for (let i =1; i<n.length; i++){
-    if (n[i]<min){
-        min=n[i];
-    };
-} 
-console.log(min);
+const prompt = require("prompt-sync")();
+const elements=Number(prompt("entrer les nombres des elements :"));
+let arrays = [];
+for (let i =1; i<=elements; i++){
+   const valeur=Number(prompt("entrer les elements : "));
+    arrays.push(valeur);
+}
+let min = arrays[0];
+for(i=1; i<=elements; i++){    
+    if (arrays[i]< min){ 
+        min = arrays[i];
+    }
+ }
+  console.log(min);
+
 
 
