@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")();
-let elements=Number(prompt("entrer les nombres des elements :"));
+const elements=Number(prompt("entrer les nombres des elements :"));
 let arrays=[]; 
 let somme = 0; 
 for (let i = 0;i<=elements; i++){
