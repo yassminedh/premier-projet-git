@@ -1,0 +1,10 @@
+const prompt = require("prompt-sync")();
+let x1 = Number(prompt("Entrer un nombre : "));
+let x2 = Number(prompt("Entrer un nombre : "));
+let y1 = Number(prompt("Entrer un nombre : "));
+let y2 = Number(prompt("Entrer un nombre : "));
+let z1 = Number(prompt("Entrer un nombre : "));
+let z2 = Number(prompt("Entrer un nombre : "));
+let distance =0;
+distance += Math.sqrt((x2-x1)**2 + (y2-y1)**9 + (z2-z1)**2);
+console.log(distance);
