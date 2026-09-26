@@ -4,6 +4,30 @@ const candidats = [
     Cin : "JY52309",
     Nom : "Derham",
     Prenom : "Yassmine",
+    PartiPolitique : "fleur",
+    Age: 20,
+    Electeurs: []
+},
+  {
+    Cin : "JY52309",
+    Nom : "Derham",
+    Prenom : "Yassmine",
+    PartiPolitique : "lio",
+    Age: 20,
+    Electeurs: []
+},
+  {
+    Cin : "JY111",
+    Nom : "ikram",
+    Prenom : "Halafat",
+    PartiPolitique : "palme",
+    Age: 20,
+    Electeurs: []
+},
+  {
+    Cin : "hh67T6",
+    Nom : "karima",
+    Prenom : "bouy",
     PartiPolitique : "Null",
     Age: 20,
     Electeurs: []
@@ -113,7 +137,7 @@ function AfficherLc() {
     let trouve = false;
     for (i = 0; i < candidats.length; i++){
         if(candidats[i].PartiPolitique === partiPOLI){
-            console.log(candidats[i]);
+            AfficherInfoC(candidats[i]);
             trouve = true;
         }         
         }
@@ -179,7 +203,8 @@ function SupprimerC() {
     if (candidats[i].Cin === CinSupprimer){
         candidats.splice(i,1);
         trouve = true;
-    }  console.log("Le candidat est supprimer");
+        console.log("Le candidat est supprimer");
+    } 
     }
     if(trouve === false){
        console.log("candida introuvable!");
@@ -191,12 +216,11 @@ function RechercherC() {
     let trouve = false;
     for (let i = 0; i< candidats.length; i++){
         if (candidats[i].Nom === NomR){
-        console.log(candidats[i]);
+        AfficherInfoC(candidats[i]);
         trouve = true;
-        }
-        if (!trouve){
-            console.log("Le candidat non introuvable!");
-        }
+        } 
+        }if (!trouve){
+         console.log("Le candidat non introuvable!");
     }
     
 }
@@ -204,19 +228,17 @@ function Statistique() {
         console.log(candidats.length);
         let TotalVotes = 0;
         for(let i = 0; i< candidats.length; i++){
-        TotalVotes =+ candidats[i].Electeurs.length;
+        TotalVotes =+ candidats[i].Electeurs;
         console.log(TotalVotes);
         } 
-        for (let i = 0; i<3;i++) {
-            for(let j=0;j<candidats.length-i-1;j++){ 
-            if (candidats[j].Electeurs.length < candidats[j + 1].Electeurs.length) {
-            let Top3 = candidats[j];
-            candidats[j] = candidats[j + 1];
-            candidats[j + 1] = Top3;
+        for (let i = 0; i<candidats.length;i++) {
+            let Top3Votes = -1;
+            if (candidats[i].Electeurs.length > Top3Votes) {
+            Top3Votes = candidats[i];
             }       
             } 
-            console.log(Top3);
-        }
+            console.log(Top3Votes);
+        
         for (let i = 0; i<candidats.length; i++){
             console.log(candidats[i].PartiPolitique = candidats[i].length);
         } 
